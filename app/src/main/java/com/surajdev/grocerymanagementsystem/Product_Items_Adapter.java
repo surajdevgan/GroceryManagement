@@ -97,10 +97,10 @@ public class Product_Items_Adapter extends RecyclerView.Adapter<MyCartHolder> {
                         ((Activity) context).finish();
                         context.startActivity(intent);
                         Log.w("resp",response);
-                        cartList.remove(position);
-                        notifyItemRemoved(position);
-                        notifyItemRangeChanged(position,cartList.size());
-                        notifyDataSetChanged();
+                      //  cartList.remove(position);
+                      //  notifyItemRemoved(position);
+                      //  notifyItemRangeChanged(position,cartList.size());
+                      //  notifyDataSetChanged();
                         mDialog.hide();
 
 
@@ -155,6 +155,13 @@ context.startActivity(new Intent(context, UpdateActivity.class)
         // step 10 return the size of the list
         return cartList.size();
     }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+
 }
 
 

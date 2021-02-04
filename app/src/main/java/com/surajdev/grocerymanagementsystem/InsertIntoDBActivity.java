@@ -56,7 +56,7 @@ public class InsertIntoDBActivity extends AppCompatActivity {
         ProductCategory = findViewById(R.id.productCategory);
         ProductPriceET = findViewById(R.id.product_price_et);
         ProductUnit = findViewById(R.id.productunit);
-        StockUnit = findViewById(R.id.stockunit);
+
         StockAvailableET = findViewById(R.id.stockAvailable_et);
         ProductUnitList = new ArrayList<>();
         ProductUnitList.add("--Select Unit--");
@@ -77,25 +77,7 @@ public class InsertIntoDBActivity extends AppCompatActivity {
 
             }
         });
-        StockUnitList = new ArrayList<>();
-        StockUnitList.add("--Select Unit--");
-        StockUnitList.add("kg");
-        StockUnitList.add("gm.");
-        StockUnitList.add("pack");
-        StockUnitList.add("piece");
-        StockUnit.setAdapter(new ArrayAdapter<String>(InsertIntoDBActivity.this,R.layout.support_simple_spinner_dropdown_item,
-                StockUnitList));
-        StockUnit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                SelectedStockUnit =StockUnit.getItemAtPosition(StockUnit.getSelectedItemPosition()).toString();
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
         DiscountPriceET = findViewById(R.id.discount_price);
         CategoryList =new ArrayList<>();
         CategoryList.add("--Select Category--");
@@ -200,7 +182,6 @@ public class InsertIntoDBActivity extends AppCompatActivity {
                 map.put("ProductUnit", SelectedProUnit);
                 map.put("DiscountPrice",DiscountPriceET.getText().toString().trim());
                 map.put("StockAvailable",StockAvailableET.getText().toString().trim());
-                map.put("StockUnit",SelectedStockUnit);
                 String imageData = imageToString(bitmap);
                 map.put("image", imageData);
                 return map;

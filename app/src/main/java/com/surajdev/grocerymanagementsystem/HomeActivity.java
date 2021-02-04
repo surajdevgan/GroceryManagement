@@ -70,7 +70,6 @@ public class HomeActivity extends AppCompatActivity {
         cartAdapter = new Product_Items_Adapter(this, cartList);
         recyclerView.setAdapter(cartAdapter);
 
-
         fetchCartProducts();
 
         //   mProgressBar.setVisibility(View.VISIBLE);
