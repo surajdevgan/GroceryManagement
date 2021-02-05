@@ -22,8 +22,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void Login(View view) {
 
-        startActivity(new Intent(this, HomeActivity.class));
-
         if(Email.getText().toString().equals("admin@123") & Password.getText().toString().equals("admin123"))
         {
             startActivity(new Intent(this, HomeActivity.class));
